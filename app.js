@@ -7,11 +7,11 @@ const app = express()
 // app.use(express.static("public"))
 app.use(bodyParser.urlencoded({extended: true}))
 
-app.get("/signup", function(req, res){
+app.get("/", function(req, res){
     res.sendFile(__dirname + "/signup.html")
 })
 
-app.post("/signup", function(req, res){
+app.post("/", function(req, res){
     const fname = req.body.firstName
     const lname = req.body.lastName
     const email = req.body.email
@@ -55,7 +55,7 @@ app.post("/signup", function(req, res){
 })
 
 app.post("/failure", function(req, res){
-    res.redirect("/signup")
+    res.redirect("/")
 })
 
 
