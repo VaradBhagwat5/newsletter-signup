@@ -2,6 +2,7 @@ const express = require("express")
 const https = require("https")
 const bodyParser = require("body-parser")
 const request = require("request")
+require('dotenv').config();
 
 const app = express()
 // app.use(express.static("public"))
@@ -30,11 +31,11 @@ app.post("/", function(req, res){
     }
     const JSONdata = JSON.stringify(data)
 
-    const url = "https://us15.api.mailchimp.com/3.0/lists/b16d70220c"
+    const url = "https://us15.api.mailchimp.com/3.0/lists/"+ process.env.AUDIENCE_ID
 
     const options = {
         method: "POST",
-        auth: "varad:b254d0113a490eeedfa15958871f4a36-us15"
+        auth: `varad:${process.env.API_KEY}`
     }
 
     const request = https.request(url, options, function(response){
@@ -62,9 +63,3 @@ app.post("/failure", function(req, res){
 app.listen(process.env.PORT || 3000, function(){
     console.log("Server started on port 3000.")
 })
-
-// Audience ID
-// b16d70220c
-
-// API key
-// b254d0113a490eeedfa15958871f4a36-us15
