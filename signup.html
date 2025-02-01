@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Newsletter Signup</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .signup-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .signup-container h1 {
+            margin-bottom: 20px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        .signup-container input[type="text"],
+        .signup-container input[type="email"] {
+            /* width: 100%; */
+            padding: 10px;
+            /* margin: 10px; */
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .signup-container button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .signup-container button:hover {
+            background-color: #218838;
+        }
+
+        .top {
+            border-bottom-right-radius: 0;
+            border-bottom-left-radius: 0;
+        }
+        .middle {
+            border-radius: 0;
+        }
+        .bottom {
+            border-top-right-radius: 0;
+            border-top-left-radius: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="signup-container">
+        <h1>Sign Up for Our Newsletter</h1>
+        <form action="/signup" method="post">
+            <input type="text" class="top" name="firstName" placeholder="Your First Name" required autofocus>
+            <input type="text" class="middle" name="lastName" placeholder="Your Last Name" required>
+            <input type="email" class="bottom" name="email" placeholder="Your Email" required>
+            <button type="submit">Sign Up</button>
+        </form>
+    </div>
+</body>
+</html>
+<style>
+    .signup-container {
+        max-width: 400px;
+    }
+    .signup-container input[type="text"]:focus,
+    .signup-container input[type="email"]:focus {
+        border-color: #80bdff;
+        outline: 0;
+        box-shadow: 0 0 5px rgba(0, 123, 255, 0.25);
+    }
+    .signup-container button:focus {
+        outline: none;
+        box-shadow: 0 0 5px rgba(0, 123, 255, 0.25);
+    }
+</style>
